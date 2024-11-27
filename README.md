@@ -1,36 +1,36 @@
-# PortfolioRepo
-
---
-Please bear in mind that all works here are WIP - they are active parts of my side-projects. 
-As such, this code will feature references to systems that are not included and empty spaces where future features will go.
---
-
---Thomas Reiffer - Technical Designer, Unity Developer and C# Programmer--
+# Thomas Reiffer 
+Technical Designer, Unity Developer and C# Programmer
+thomas.reiffer@gmail.com
 
 This repo contains tools and gameplay logic that I've implemented for my own projects. 
 Initial commit is a snapshot of said WIP project, which had been stored on a different VC as git's LFS and UI aren't great for collaborating with non-technical assets and colleagues.
 
+Please bear in mind that all works here are WIP - they are active parts of my side-projects. 
+As such, this code will feature references to systems that are not included and empty spaces where future features will go.
+
+
 Included tools:
 
--Action Controller & "Action" State Gameplay Logic
-	A FSM for character gameplay behaviour, interpreting game state and managing both behaviour and animation.
-	
-	The action controller sits between a character manager class and mecanim. Each update, the action controller iterates through its available actions, evaluates each
+# Action Controller & "Action" State Gameplay Logic
+A FSM for character gameplay behaviour, interpreting game state and ouputting both behaviour and animation.
+
+The action controller sits between a character manager class and mecanim. Each update, the action controller iterates through its available actions, evaluates each
 	state's activation parameters, and then transitions between these states accordingly. This drives mecanim state machines, and each action is tightly coupled to gameplay 
 	behaviour contained within them.
 
--Cover Matrix
-	A solution for full-3D pathfinding for ranged aerial combatants.
+# Cover Matrix
 
-	Part of The Markov Eclipse's feature list is performant full-3D target- and path-finding for aerial combatants. To achieve this, I wrote an algorithm that 
+A solution for full-3D pathfinding for ranged aerial combatants.
+
+Part of The Markov Eclipse's feature list is performant full-3D target- and path-finding for aerial combatants. To achieve this, I wrote an algorithm that 
 	bakes cover data from sampled positions in 3D space, and then serializes these values as a bit array to be streamed in along with level geometry and traditional 
 	pathfinding data. The initial bake can take a while depending on the size of the arena, but the binaries are quick to deserialize and the deserialized data is then 
 	performant when accesssing at runtime.
 
--Command Queue
-	Caching player commands per-unit for an RTS game, and executing them in turn.
+# Command Queue
+Caching player commands per-unit for an RTS game, and executing them in turn.
 
-	The command queue is a classic first in, first out command buffering queue. The complexity here is containing all of the varied data that a squad tactics RPG/RTS
+The command queue is a classic first in, first out command buffering queue. The complexity here is containing all of the varied data that a squad tactics RPG/RTS
 	needs to include in those commands. Each combatant has its own queue, both NPC and PC, but the PCs' CQ is driven by player inputs. This is the least developed of the 
 	systems included. 
 	
