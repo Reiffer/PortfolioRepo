@@ -229,7 +229,7 @@ public class VisMapGenerator : MonoBehaviour
     }
 
     /// <summary>
-    /// Generate additional fidelity around a passed point. Creates points within the min/max bounds around a point provided.
+    /// Creates additional points within the min/max bounds around a point provided.
     /// </summary>
     /// <param name="point"></param>
     /// <param name="maxx"></param>
@@ -302,16 +302,16 @@ public class VisMapGenerator : MonoBehaviour
     }
 
     /// <summary>
-    /// Writes the bit array to a binary for storage.
+    /// Writes the bit array to a binary for storage as a series of KVPs.
     /// </summary>
     void SerializeVisibilityMap()
     {
         using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.Create)))
         {
-            // First, write the number of points
+            // First, write the number of points.
             writer.Write(gridPoints.Count);
 
-            // Write each grid point
+            // Write each grid point.
             foreach (Vector3 point in gridPoints)
             {
                 writer.Write(point.x);
@@ -319,7 +319,7 @@ public class VisMapGenerator : MonoBehaviour
                 writer.Write(point.z);
             }
 
-            // Write visibility data
+            // Write visibility data.
             foreach (KeyValuePair<Vector3, BitArray> kvp in visibilityMap)
             {
                 Vector3 point = kvp.Key;
@@ -329,13 +329,13 @@ public class VisMapGenerator : MonoBehaviour
                 writer.Write(point.y);
                 writer.Write(point.z);
 
-                // Write the length of the BitArray in bits
+                // Write the length of the BitArray in bits.
                 writer.Write(bitArray.Length);
 
-                // Calculate the exact number of bytes needed for the BitArray
+                // Calculate the exact number of bytes needed for the BitArray.
                 int bytesLength = (bitArray.Length + 7) / 8;
 
-                // Convert BitArray to bytes and write
+                // Convert BitArray to bytes and write.
                 byte[] bitArrayBytes = new byte[bytesLength];
                 bitArray.CopyTo(bitArrayBytes, 0);
                 writer.Write(bitArrayBytes);
