@@ -20,12 +20,12 @@ The action controller sits between a character manager class and mecanim. Each u
 
 # Cover Matrix
 
-A solution for full-3D pathfinding for ranged aerial combatants.
+A solution for full-3D pathfinding for ranged aerial combatants. Assumes a static environment.
 
 Part of The Markov Eclipse's feature list is performant full-3D target- and path-finding for aerial combatants. To achieve this, I wrote an algorithm that 
 	bakes cover data from sampled positions in 3D space, and then serializes these values as a bit array to be streamed in along with level geometry and traditional 
 	pathfinding data. The initial bake can take a while depending on the size of the arena, but the binaries are quick to deserialize and the deserialized data is then 
-	performant when accesssing at runtime.
+	performant when accessing at runtime.  
 
 # Command Queue
 Caching player commands per-unit for an RTS game, and executing them in turn.
