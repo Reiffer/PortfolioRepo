@@ -1,5 +1,5 @@
 # Thomas Reiffer 
-Technical Designer, Unity Developer and C# Programmer
+Technical Game Designer - Prototyping Portfolio
 thomas.reiffer@gmail.com
 
 This repo contains tools and gameplay logic that I've implemented for my own projects. 
@@ -18,21 +18,14 @@ The action controller sits between a character manager class and mecanim. Each u
 	state's activation parameters, and then transitions between these states accordingly. This drives mecanim state machines, and each action is tightly coupled to gameplay 
 	behaviour contained within them.
 
-# Vismap
+# Cover Matrix
 
-A solution for full-3D pathfinding for ranged aerial combatants. Bakes a .bin from projecting a navmesh on the Y axis by a given number of units, then raycasts between each point within that projection.
+A solution for full-3D pathfinding for ranged aerial combatants. Assumes a static environment.
 
 Part of The Markov Eclipse's feature list is performant full-3D target- and path-finding for aerial combatants. To achieve this, I wrote an algorithm that 
 	bakes cover data from sampled positions in 3D space, and then serializes these values as a bit array to be streamed in along with level geometry and traditional 
 	pathfinding data. The initial bake can take a while depending on the size of the arena, but the binaries are quick to deserialize and the deserialized data is then 
-	performant when accesssing at runtime. 
-	
-TODO: Evaluation algorithms that use this data to plot a path that can operate on a number of different priorities:
-
-1) Find the closest location to me that provides a clear shot against X combatant.
-2) Find a path to Y location that has the best cover against all hostile combatants.
-3) Find a location that gives lets me shoot at the most locations, and be also be protected from the most locations.
-
+	performant when accessing at runtime.  
 
 # Command Queue
 Caching player commands per-unit for an RTS game, and executing them in turn.
