@@ -1,6 +1,7 @@
 # Thomas Reiffer 
 Technical Game Designer - Prototyping Portfolio
-thomas.reiffer@gmail.com
+
+thomas.reiffer@gmail.com | https://www.thomasreiffer.com/
 
 This repo contains tools and gameplay logic that I've implemented for my own projects. 
 Initial commit is a snapshot of said WIP project, which had been stored on a different VC as git's LFS and UI aren't great for collaborating with non-technical assets and colleagues.
