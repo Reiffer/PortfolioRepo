@@ -1,5 +1,5 @@
 # Thomas Reiffer 
-Technical Designer, Unity Developer and C# Programmer
+Technical Game Designer - Prototyping Portfolio
 thomas.reiffer@gmail.com
 
 This repo contains tools and gameplay logic that I've implemented for my own projects. 
